@@ -1,14 +1,19 @@
 const ACCESS_KEY = 'Bv6racoKAPzT3BjvXAz8ZresC7xUK5EaFpnr0g9pFjQ';
 const API_URL = 'https://api.unsplash.com';
 
-export const getPhotos = async (page = 1, perPage = 12) => {
-  const response = await fetch(
-    `${API_URL}/photos?client_id=${ACCESS_KEY}&page=${page}&per_page=${perPage}`
-  );
+export const getPhotos = async (query = '', page = 1, perPage = 12) => {
+  let url;
+  if (query) {
+    url = `${API_URL}/search/photos?client_id=${ACCESS_KEY}&query=${encodeURIComponent(query)}&page=${page}&per_page=${perPage}`;
+  } else {
+    url = `${API_URL}/photos?client_id=${ACCESS_KEY}&page=${page}&per_page=${perPage}`;
+  }
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error('Failed to fetch photos');
   }
   const data = await response.json();
   console.log('Fetched photos:', data);
-  return data;
+  // If searching, return results array; else return data directly
+  return query ? data.results : data;
 };

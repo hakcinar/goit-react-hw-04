@@ -1,6 +1,8 @@
 import React from 'react';
+import './SearchBar.module.css';
+import { FiSearch } from 'react-icons/fi';
 
-const SearchBar = ({ onChange, onSubmit, buttonOnClick }) => {
+const SearchBar = ({ onChange, onSubmit }) => {
   return (
     <header>
       <form onSubmit={onSubmit}>
@@ -12,8 +14,8 @@ const SearchBar = ({ onChange, onSubmit, buttonOnClick }) => {
           placeholder="Search images and photos"
           onChange={onChange}
         />
-        <button onClick={buttonOnClick} type="submit">
-          Search
+        <button type="submit">
+          <FiSearch />
         </button>
       </form>
     </header>
