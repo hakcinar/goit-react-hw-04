@@ -1,11 +1,11 @@
-header {
+.header {
   background-color: darkblue;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-input {
+.input {
   width: 300px;
   height: 30px;
   font-size: 16px;
@@ -14,10 +14,10 @@ input {
   outline: none;
   border-radius: 4px;
 }
-form {
+.form {
   position: relative;
 }
-form button {
+.button {
   position: absolute;
   left: 5px;
   top: 5px;

@@ -4,17 +4,17 @@ import { FiSearch } from 'react-icons/fi';
 
 const SearchBar = ({ onChange, onSubmit }) => {
   return (
-    <header>
-      <form onSubmit={onSubmit}>
+    <header className={styles.header}>
+      <form className={styles.form} onSubmit={onSubmit}>
         <input
-          className="input"
+          className={styles.input}
           type="text"
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
           onChange={onChange}
         />
-        <button type="submit">
+        <button className={styles.button} type="submit">
           <FiSearch />
         </button>
       </form>
