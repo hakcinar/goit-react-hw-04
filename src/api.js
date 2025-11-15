@@ -13,7 +13,5 @@ export const getPhotos = async (query = '', page = 1, perPage = 12) => {
     throw new Error('Failed to fetch photos');
   }
   const data = await response.json();
-  console.log('Fetched photos:', data);
-  // If searching, return results array; else return data directly
   return query ? data.results : data;
 };
