@@ -1,5 +1,5 @@
 import React from 'react';
-import './SearchBar.module.css';
+import styles from './SearchBar.module.css';
 import { FiSearch } from 'react-icons/fi';
 
 const SearchBar = ({ onChange, onSubmit }) => {
